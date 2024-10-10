@@ -58,7 +58,7 @@ This project automates various interactions on the Bikroy.com website using Sele
            <scope>test</scope>
        </dependency>
    </dependencies>
-WebDriver Setup: Place chromedriver.exe or geckodriver.exe in your system’s PATH or the project’s drivers/ directory.
+2. **WebDriver Setup:** Place chromedriver.exe or geckodriver.exe in your system’s PATH or the project’s drivers/ directory.
 Project Structure
 plaintext
 Copy code
@@ -77,36 +77,36 @@ BikroyAutomation/
 ├── drivers/              # WebDriver binaries (ChromeDriver/GeckoDriver)
 ├── pom.xml               # Maven configuration file
 └── README.md             # This file
-How to Run the Tests
-Run with Maven: Navigate to the project directory and use Maven to run the tests.
+### How to Run the Tests
+1. **Run with Maven:** Navigate to the project directory and use Maven to run the tests.
 
 bash
 Copy code
 mvn test
-Run Individually (JUnit/TestNG): In your IDE (e.g., IntelliJ or Eclipse), right-click on any test file and run as a TestNG or JUnit test.
+2. **Run Individually (JUnit/TestNG):** In your IDE (e.g., IntelliJ or Eclipse), right-click on any test file and run as a TestNG or JUnit test.
 
-Browser Configuration: In your BaseTest.java, ensure the WebDriver path is set correctly:
+3. **Browser Configuration:** In your BaseTest.java, ensure the WebDriver path is set correctly:
 
 java
 Copy code
 System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
 WebDriver driver = new ChromeDriver();
-Test Classes
-1. BaseTest.java
+### Test Classes
+1. **BaseTest.java**
 Contains common setup and teardown methods to initialize and close the browser before and after every test.
 
-2. NavigationTest.java
+2. **NavigationTest.java**
 Automates navigation through Bikroy.com categories and verifies elements on each page.
 
-3. SearchTest.java
+3. **SearchTest.java**
 Tests the search feature by verifying that results match various search queries.
 
-4. FilterTest.java
+4. **FilterTest.java**
 Tests the filter functionality, ensuring results match applied filters.
 
-Troubleshooting
-WebDriver Issues: Ensure the WebDriver version matches your browser version.
-Element Not Found: Use appropriate locators and adjust WebDriverWait timing if necessary.
-Browser Compatibility: Ensure the correct WebDriver is used (e.g., ChromeDriver for Chrome).
-Contributing
-Fork the repository and submit issues or pull requests for contributions.
+### Troubleshooting
+**WebDriver Issues:** Ensure the WebDriver version matches your browser version.
+**Element Not Found:** Use appropriate locators and adjust WebDriverWait timing if necessary.
+**Browser Compatibility:** Ensure the correct WebDriver is used (e.g., ChromeDriver for Chrome).
+### Contributing
+Feel free to fork this repository, submit issues, or open pull requests to contribute to the project.
