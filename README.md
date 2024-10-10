@@ -68,8 +68,7 @@ This project automates various interactions on the Bikroy.com website using Sele
 
 3. **Browser Configuration:** In your BaseTest.java, ensure the WebDriver path is set correctly:
 
-```java System.setProperty("webdriver.chrome.driver", "drivers/chromedriver"); 
-   WebDriver driver = new ChromeDriver(); ```
+```java System.setProperty("webdriver.chrome.driver", "drivers/chromedriver"); WebDriver driver = new ChromeDriver(); ```
 ### Test Classes
 1. **BaseTest.java**
 Contains common setup and teardown methods to initialize and close the browser before and after every test.
