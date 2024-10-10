@@ -59,24 +59,6 @@ This project automates various interactions on the Bikroy.com website using Sele
        </dependency>
    </dependencies>
 2. **WebDriver Setup:** Place chromedriver.exe or geckodriver.exe in your system’s PATH or the project’s drivers/ directory.
-Project Structure
-plaintext
-Copy code
-BikroyAutomation/
-│
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── com/
-│   │           └── bikroy/               
-│   │               ├── BaseTest.java     
-│   │               ├── NavigationTest.java  
-│   │               ├── SearchTest.java      
-│   │               └── FilterTest.java      
-│
-├── drivers/              # WebDriver binaries (ChromeDriver/GeckoDriver)
-├── pom.xml               # Maven configuration file
-└── README.md             # This file
 ### How to Run the Tests
 1. **Run with Maven:** Navigate to the project directory and use Maven to run the tests.
 
