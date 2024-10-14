@@ -86,9 +86,6 @@ Tests the search feature by verifying that results match various search queries.
 4. **FilterTest.java**
 Tests the filter functionality, ensuring results match applied filters.
 
-### Troubleshooting
-- **WebDriver Issues:** Ensure the WebDriver version matches your browser version.
-- **Element Not Found:** Use appropriate locators and adjust WebDriverWait timing if necessary.
-- **Browser Compatibility:** Ensure the correct WebDriver is used (e.g., ChromeDriver for Chrome).
+
 ### Contributing
 Feel free to fork this repository, submit issues, or open pull requests to contribute to the project.
