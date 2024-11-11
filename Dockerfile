@@ -1,26 +1,33 @@
-# Use an OpenJDK runtime as base image
-FROM ubuntu:22.04
+# Use an official Maven image as a parent image
+FROM maven:3.8.4-openjdk-11
 
-# Set the working directory in the container
-WORKDIR /app
+# Set the working directory
+WORKDIR /usr/src/app
 
-# Copy the Maven project files to the container
+# Install necessary packages
+RUN apt-get update \
+    && apt-get install -y \
+        firefox-esr \
+        wget \
+        bzip2 \
+        xvfb \
+        libdbus-glib-1-2 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install GeckoDriver v0.33.0
+RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz \
+    && tar -xzf geckodriver-v0.33.0-linux64.tar.gz -C /usr/local/bin/ \
+    && rm geckodriver-v0.33.0-linux64.tar.gz \
+    && chmod +x /usr/local/bin/geckodriver
+
+# Copy the pom.xml file and download dependencies
+COPY pom.xml .
+
+# Download dependencies
+RUN mvn dependency:resolve
+
+# Copy the rest of the application
 COPY . .
 
-# Install Maven
-RUN apt-get update && apt-get upgrade -y
-
-# Build the Maven project
-RUN chmod +x ./install_dependecies.sh
-
-# Expose the port for Allure report (if needed)
-RUN ./install_dependecies.sh
-
-# Run the Allure report generation command
-CMD [ "mvn","clean", "test" ]
-
-# (Optional) You can specify the command to run your tests here instead of the CMD above.
-# CMD mvn test
-
-# (Optional) If you have a custom script to run the tests and generate the report, you can specify it here.
-# CMD ./run_tests.sh
+# Clean and run the tests
+CMD ["mvn", "clean", "test"]
