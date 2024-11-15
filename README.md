@@ -1,5 +1,3 @@
-markdown
-Copy code
 # Bikroy.com Web Automation with Selenium (Java)
 
 ## Overview
@@ -62,16 +60,17 @@ This project automates various interactions on the Bikroy.com website using Sele
 ### How to Run the Tests
 1. **Run with Maven:** Navigate to the project directory and use Maven to run the tests.
 
-```mvn test```
+   ```java
+   mvn test
 
 2. **Run Individually (JUnit/TestNG):** In your IDE (e.g., IntelliJ or Eclipse), right-click on any test file and run as a TestNG or JUnit test.
 
 3. **Browser Configuration:** In your BaseTest.java, ensure the WebDriver path is set correctly:
 
-```java
-System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-WebDriver driver = new ChromeDriver();
-```
+   ```java
+   System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+   WebDriver driver = new ChromeDriver();
+
 
 ### Test Classes
 1. **BaseTest.java**
